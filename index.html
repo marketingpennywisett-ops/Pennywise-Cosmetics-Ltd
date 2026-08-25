@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pennywise Cosmetics - Trinidad & Tobago's home for everyday essentials, pharmacy care, and more, across 10 stores nationwide."
+    />
+    <title>Pennywise Cosmetics Ltd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="icon" type="image/png" href="assets/Pennywise-Fav-Icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cursor-glow"></div>
+
+    <div class="page-loader" id="pageLoader" aria-hidden="true">
+      <div class="page-loader-inner">
+        <span class="page-loader-ring"></span>
+        <img
+          class="page-loader-icon"
+          src="assets/Pennywise-Fav-Icon.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <header class="site-header" id="top">
+      <a class="logo" href="index.html" aria-label="Pennywise home"
+        ><img
+          class="logo-image"
+          src="assets/White-Logo.png"
+          alt="Pennywise Cosmetics Limited"
+      /></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="active" href="index.html">Home</a
+        ><a href="about.html">About</a><a href="gallery.html">Gallery</a
+        ><a href="pharmacy.html">Pharmacy</a
+        ><a href="locations.html">Locations</a
+        ><a href="promotions.html">Promotions</a>
+      </nav>
+      <div class="header-tools">
+        <a class="header-social-link" href="social-media.html">Social Media</a>
+        <div class="auth-slot" id="authSlot"></div>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+    <main>
+      <section class="hero" aria-label="Welcome to Pennywise">
+        <div class="hero-image"></div>
+        <div class="hero-shade"></div>
+        <div class="hero-content reveal">
+          <h1>Welcome to Pennywise<br />Cosmetics Limited</h1>
+          <p class="hero-copy">Beauty Wise | Health Wise | Price Wise</p>
+          <div class="hero-actions">
+            <a class="button button-coral" href="locations.html"
+              >View our locations <span>↓</span></a
+            ><a class="text-link light-text" href="gallery.html"
+              >See the gallery <span>↗</span></a
+            >
+          </div>
+        </div>
+        <div class="hero-note">
+          Trinidad &amp; Tobago<br /><strong>10 stores nationwide</strong>
+        </div>
+        <div class="hero-scroll">Scroll to gallery <span>↓</span></div>
+      </section>
+
+      <section class="logo-ticker" aria-label="Brand partners">
+        <div class="logo-track">
+          <!-- First set (Logos 1-16) -->
+          <img src="assets/logos/1.png" alt="Brand Logo 1" />
+          <img src="assets/logos/2.png" alt="Brand Logo 2" />
+          <img src="assets/logos/3.png" alt="Brand Logo 3" />
+          <img src="assets/logos/4.png" alt="Brand Logo 4" />
+          <img src="assets/logos/5.png" alt="Brand Logo 5" />
+          <img src="assets/logos/6.png" alt="Brand Logo 6" />
+          <img src="assets/logos/7.png" alt="Brand Logo 7" />
+          <img src="assets/logos/8.png" alt="Brand Logo 8" />
+          <img src="assets/logos/9.png" alt="Brand Logo 9" />
+          <img src="assets/logos/10.png" alt="Brand Logo 10" />
+          <img src="assets/logos/11.png" alt="Brand Logo 11" />
+          <img src="assets/logos/12.png" alt="Brand Logo 12" />
+          <img src="assets/logos/13.png" alt="Brand Logo 13" />
+          <img src="assets/logos/14.png" alt="Brand Logo 14" />
+          <img src="assets/logos/15.png" alt="Brand Logo 15" />
+          <img src="assets/logos/16.png" alt="Brand Logo 16" />
+
+          <!-- Duplicate set for seamless infinite loop -->
+          <img src="assets/logos/1.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/2.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/3.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/4.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/5.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/6.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/7.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/8.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/9.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/10.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/11.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/12.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/13.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/14.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/15.png" alt="" aria-hidden="true" />
+          <img src="assets/logos/16.png" alt="" aria-hidden="true" />
+        </div>
+      </section>
+      <section class="locations-map-section section-pad" id="locations">
+        <div class="locations-map-intro carousel-header">
+          <h2>Visit us <em>across Trinidad</em></h2>
+        </div>
+        <div class="map-layout">
+          <div
+            class="locations-map"
+            id="locationsMap"
+            role="application"
+            aria-label="Map of Pennywise store locations across Trinidad"
+          ></div>
+          <aside
+            class="location-details"
+            id="locationDetails"
+            aria-live="polite"
+          >
+            <p class="location-details-label">Store locations</p>
+            <h3>Select a pin</h3>
+            <p>
+              Hover over or select a pin to see store details, opening hours,
+              and directions.
+            </p>
+          </aside>
+        </div>
+      </section>
+      <section class="home-stats section-pad">
+        <div class="home-stats-row">
+          <div>
+            <strong class="stat-number" data-target="40" data-suffix="+"
+              >0</strong
+            >
+            <span>years serving<br />our community</span>
+          </div>
+          <div>
+            <strong class="stat-number" data-target="10">0</strong>
+            <span>stores across<br />Trinidad</span>
+          </div>
+          <div>
+            <strong class="stat-number" data-target="16000" data-suffix="+"
+              >0</strong
+            >
+            <span>products,<br />one easy stop</span>
+          </div>
+        </div>
+        <a class="button button-dark home-story-btn" href="about.html"
+          >Our Story <span>↗</span></a
+        >
+      </section>
+      <section class="promise section-pad">
+        <div class="promise-copy">
+          <h2>Useful things.<br /><em>Thoughtful service.</em></h2>
+          <p>
+            All customers with prescriptions now have the convenience to
+            <strong>WhatsApp</strong> a picture of their prescription to the
+            pharmacy they wish to visit and collect.
+          </p>
+
+          <p class="promise-note">
+            <strong>Note:</strong>
+            <em>
+              Customer collecting must walk with physical prescription to
+              collect at the branch WhatsApp was sent to.
+            </em>
+          </p>
+
+          <ul class="promise-list">
+            <li><strong>Chaguanas Plaza</strong>: 795-9473</li>
+            <li><strong>La Romain</strong>: 684-9473</li>
+            <li><strong>San Fernando</strong>: 473-9473</li>
+            <li><strong>Trincity Mall</strong>: 735-9473</li>
+            <li><strong>Trincity Plaza</strong>: 640-8034</li>
+            <li><strong>Tunapuna</strong>: 484-9473</li>
+            <li><strong>Grand Bazaar</strong>: 774-9473</li>
+            <li><strong>Port of Spain</strong>: 466-9473</li>
+            <li><strong>Long Circular Mall</strong>: 745-9473</li>
+            <li><strong>Chaguanas Main Rd</strong>: 744-9473</li>
+            <li><strong>Arima</strong>: 467-9473</li>
+          </ul>
+
+          <a class="button button-dark" href="pharmacy.html"
+            >Discover pharmacy <span>↗</span></a
+          >
+        </div>
+        <div class="promise-image">
+          <img src="assets/Phramacy-Photo.png" alt="Pennywise pharmacy photo" />
+        </div>
+      </section>
+
+      <section
+        class="testimonials section-pad"
+        aria-label="Customer testimonials"
+      >
+        <div class="testimonial-header">
+          <p class="section-label">Testimonials</p>
+          <h2>Why customers <em>keep coming back.</em></h2>
+        </div>
+
+        <div class="testimonial-marquee">
+          <div class="testimonial-track">
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “Pennywise has been my go-to for years because nobody in
+                Trinidad can beat their prices. From skin care to household
+                essentials, I always get the absolute best value for my money.
+                Plus, the staff at the Chaguanas plaza are always super friendly
+                and ready to point you in the right direction!”
+              </p>
+              <p class="testimonial-author">— Anesa R., Chaguanas</p>
+            </article>
+
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “What I love most is the incredible variety. You can walk in for
+                a quick pharmacy item and end up finding top-tier cosmetics,
+                imported hair products, and personal care items you usually
+                can't find elsewhere locally. It’s truly a one-stop shop.”
+              </p>
+              <p class="testimonial-author">— Marcus T., San Fernando</p>
+            </article>
+
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “Shopping here is always a smooth experience. The store is
+                well-organized, fully air-conditioned, and the security and
+                parking setup give you real peace of mind while you shop. The
+                cashiers move fast even when the store is busy.”
+              </p>
+              <p class="testimonial-author">— Priya S., Trincity</p>
+            </article>
+
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “Pennywise has been my go-to for years because nobody in
+                Trinidad can beat their prices. From skin care to household
+                essentials, I always get the absolute best value for my money.
+                Plus, the staff at the Chaguanas plaza are always super friendly
+                and ready to point you in the right direction!”
+              </p>
+              <p class="testimonial-author">— Anesa R., Chaguanas</p>
+            </article>
+
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “What I love most is the incredible variety. You can walk in for
+                a quick pharmacy item and end up finding top-tier cosmetics,
+                imported hair products, and personal care items you usually
+                can't find elsewhere locally. It’s truly a one-stop shop.”
+              </p>
+              <p class="testimonial-author">— Marcus T., San Fernando</p>
+            </article>
+
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                “Shopping here is always a smooth experience. The store is
+                well-organized, fully air-conditioned, and the security and
+                parking setup give you real peace of mind while you shop. The
+                cashiers move fast even when the store is busy.”
+              </p>
+              <p class="testimonial-author">— Priya S., Trincity</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="whatsapp-channel section-pad"
+        aria-label="WhatsApp channel"
+      >
+        <div class="whatsapp-copy">
+          <p class="section-label">WhatsApp channel</p>
+          <h2>Stay in the loop with <em>exclusive deals.</em></h2>
+          <p>
+            Get product updates, pharmacy alerts, and the latest Pennywise
+            offers straight to your phone.
+          </p>
+          <a
+            class="button button-dark whatsapp-btn"
+            href="https://whatsapp.com/channel/0029VbCvCr23AzNL0UleLb2i"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Join our WhatsApp channel <span>↗</span>
+          </a>
+        </div>
+        <a
+          class="whatsapp-qr"
+          href="https://whatsapp.com/channel/0029VbCvCr23AzNL0UleLb2i"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open Pennywise WhatsApp channel"
+        >
+          <span class="whatsapp-qr-badge" aria-hidden="true">
+            <img src="assets/WhatsApp.png" alt="" />
+          </span>
+          <img
+            src="assets/WhatsApp-Channel-QRcode.png"
+            alt="Pennywise WhatsApp channel QR code"
+          />
+        </a>
+      </section>
+
+      <section class="contact section-pad" id="contact">
+        <div class="contact-copy">
+          <h2>Get Ready to Look &amp; Feel your Best</h2>
+          <p class="contact-intro">
+            <strong>Got a Question, Query or Suggestion?</strong> Please do not
+            hesitate to contact us, we're here to help.
+          </p>
+        </div>
+
+        <form class="contact-form">
+          <label>
+            <span>Your Name</span>
+            <input type="text" name="name" placeholder="Your Name" />
+          </label>
+          <label>
+            <span>Your Email Address</span>
+            <input type="email" name="email" placeholder="Your Email Address" />
+          </label>
+          <label>
+            <span>Your Phone Number</span>
+            <input type="tel" name="phone" placeholder="Your Phone Number" />
+          </label>
+          <label class="field-message">
+            <span>Your Message</span>
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+            ></textarea>
+          </label>
+          <button type="submit" class="button button-light">
+            Send message <span>↗</span>
+          </button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <a class="logo" href="#top"
+        ><img
+          class="logo-image"
+          src="assets/White-Logo.png"
+          alt="Pennywise Cosmetics Limited"
+      /></a>
+      <div class="social-links" aria-label="Social media links">
+        <a
+          href="https://www.tiktok.com/@pennywise.tt"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="TikTok"
+        >
+          <img src="assets/TikTok.png" alt="TikTok" />
+        </a>
+        <a
+          href="https://www.instagram.com/pennywisett/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Instagram"
+        >
+          <img src="assets/Instagram.png" alt="Instagram" />
+        </a>
+        <a
+          href="https://www.facebook.com/PennywiseCosmeticsLtd/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Facebook"
+        >
+          <img src="assets/Facebook.png" alt="Facebook" />
+        </a>
+        <a
+          href="https://whatsapp.com/channel/0029VbCvCr23AzNL0UleLb2i"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="WhatsApp"
+        >
+          <img src="assets/WhatsApp.png" alt="WhatsApp" />
+        </a>
+      </div>
+      <span>© 2026 Pennywise Cosmetics Ltd</span>
+    </footer>
+    <button class="scroll-top" aria-label="Back to top" title="Back to top">
+      ↑
+    </button>
+    <aside class="faq-widget" aria-label="Frequently asked questions">
+      <div class="faq-panel" aria-hidden="true">
+        <div class="faq-panel-head">
+          <div class="faq-agent">
+            <img
+              class="faq-avatar"
+              src="assets/Pennywise-Fav-Icon.png"
+              alt="Penny, your Pennywise assistant"
+            />
+            <div class="faq-agent-info">
+              <strong>Pennywise Assistant</strong
+              ><span class="faq-status"><i></i>Online now</span>
+            </div>
+          </div>
+          <button class="faq-close" aria-label="Close FAQ">×</button>
+        </div>
+        <div class="faq-chat" id="faqChat">
+          <div class="msg msg-agent">
+            <img
+              class="msg-avatar"
+              src="assets/Pennywise-Fav-Icon.png"
+              alt=""
+            />
+            <div class="msg-bubble">
+              Hi, I’m your Pennywise Assistant 👋 Ask me anything — like “what
+              time does Chaguanas open?” or “can I refill a prescription?”
+            </div>
+          </div>
+        </div>
+        <form class="faq-input-row" id="faqForm">
+          <input
+            type="text"
+            id="faqInput"
+            name="faqInput"
+            placeholder="Type your question…"
+            autocomplete="off"
+            aria-label="Type your question"
+          />
+          <button type="submit" aria-label="Send question">➤</button>
+        </form>
+      </div>
+      <button class="faq-trigger">
+        <span class="faq-pulse"></span><span>Have a question?</span
+        ><strong>✦</strong>
+      </button>
+    </aside>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
