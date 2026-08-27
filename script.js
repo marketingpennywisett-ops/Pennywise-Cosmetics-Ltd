@@ -133,6 +133,81 @@ if (document.readyState === "loading") {
   initCountingAnimation();
 }
 
+/* ============================================================
+   CURSOR GLOW
+   A soft glow that follows the pointer for a bit of ambient
+   motion. Skipped on touch devices and for anyone who prefers
+   reduced motion.
+   ============================================================ */
+(function initCursorGlow() {
+  const glow = document.querySelector(".cursor-glow");
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+
+  if (!glow || prefersReducedMotion || isTouchDevice) return;
+
+  let targetX = window.innerWidth / 2;
+  let targetY = window.innerHeight / 2;
+  let currentX = targetX;
+  let currentY = targetY;
+  let isActive = false;
+
+  window.addEventListener("mousemove", (event) => {
+    targetX = event.clientX;
+    targetY = event.clientY;
+    if (!isActive) {
+      isActive = true;
+      glow.classList.add("is-active");
+    }
+  });
+
+  window.addEventListener("mouseleave", () => {
+    isActive = false;
+    glow.classList.remove("is-active");
+  });
+
+  function followPointer() {
+    currentX += (targetX - currentX) * 0.15;
+    currentY += (targetY - currentY) * 0.15;
+    glow.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+    requestAnimationFrame(followPointer);
+  }
+
+  requestAnimationFrame(followPointer);
+})();
+
+/* ============================================================
+   SCROLL REVEAL
+   Adds an "in-view" class to sections once they scroll into
+   view, so their contents can animate in via CSS. Currently
+   used by the pharmacy promise section.
+   ============================================================ */
+(function initScrollReveal() {
+  const targets = document.querySelectorAll(".promise");
+  if (!targets.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    targets.forEach((el) => el.classList.add("in-view"));
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.25 },
+  );
+
+  targets.forEach((el) => revealObserver.observe(el));
+})();
+
 menuToggle?.addEventListener("click", () => {
   const isOpen = mainNav.classList.toggle("open");
   menuToggle.setAttribute("aria-expanded", String(isOpen));
