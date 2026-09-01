@@ -181,11 +181,11 @@ if (document.readyState === "loading") {
 /* ============================================================
    SCROLL REVEAL
    Adds an "in-view" class to sections once they scroll into
-   view, so their contents can animate in via CSS. Currently
-   used by the pharmacy promise section.
+   view, so their contents can animate in via CSS. Used by the
+   pharmacy promise section and the social-media page sections.
    ============================================================ */
 (function initScrollReveal() {
-  const targets = document.querySelectorAll(".promise");
+  const targets = document.querySelectorAll(".promise, .social-reveal");
   if (!targets.length) return;
 
   if (!("IntersectionObserver" in window)) {

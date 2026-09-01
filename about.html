@@ -32,15 +32,18 @@
       <a class="logo" href="index.html" aria-label="Pennywise home"
         ><img
           class="logo-image"
-          src="assets/Pink-Logo.png"
+          src="assets/White-Logo.png"
           alt="Pennywise Cosmetics Limited"
       /></a>
       <nav class="main-nav" aria-label="Main navigation">
-        <a class="active" href="index.html">Home</a
-        ><a href="about.html">About</a><a href="gallery.html">Gallery</a
+        <a href="index.html">Home</a
+        ><a class="active" href="about.html">About</a
+        ><a href="news-media.html">News/Media</a
+        ><a href="social-media.html">Social Media</a
+        ><a href="catalog.html">Catalog</a
         ><a href="pharmacy.html">Pharmacy</a
-        ><a href="locations.html">Locations</a
-        ><a href="promotions.html">Promotions</a>
+        ><a href="promotions.html">Promotions</a
+        ><a href="plazas.html">Plazas</a>
       </nav>
       <div class="header-tools">
         <a class="header-social-link" href="social-media.html">Social Media</a>
@@ -51,21 +54,22 @@
       </button>
     </header>
     <main>
-      <section class="inner-hero about-hero">
-        <div class="inner-hero-shade"></div>
-        <div class="inner-hero-content">
-          <h1>Our Story</h1>
-          <p>From humble beginnings to a Caribbean retail leader</p>
-        </div>
-      </section>
-      <section class="intro section-pad about-section">
+      <section class="about-section">
+        <div class="about-section-panel section-pad">
         <div class="about-grid">
-          <div class="about-image-wrap">
-            <img
-              src="assets/About-Image.png"
-              alt="Mr Lall Paladee"
-              class="about-image"
-            />
+          <div class="about-image-frame">
+            <div class="about-image-wrap">
+              <img
+                src="assets/About-Image.png"
+                alt="Mr Lall Paladee"
+                class="about-image"
+              />
+              <span class="about-image-caption"
+                >Mr Lall Paladee<small
+                  >Founder, Pennywise Cosmetics</small
+                ></span
+              >
+            </div>
           </div>
           <div class="about-copy">
             <div class="about-kicker">2017 Business Hall of Fame Inductee</div>
@@ -92,6 +96,12 @@
               and sacrificed and opened another location at the Tunapuna market,
               gradually expanding their portfolio as their business grew.
             </p>
+
+            <p class="about-highlight">
+              From a raffle-won bicycle to <em>Trinidad &amp; Tobago's</em>
+              largest health &amp; beauty retailer.
+            </p>
+
             <p>
               Finally, in 1984, they opened their first retail store at Arima. A
               tiny space, no more than 1200 square feet, the first Pennywise
@@ -127,6 +137,7 @@
             ><span>products,<br />one easy stop</span>
           </div>
         </div>
+        </div>
       </section>
     </main>
     <footer>
@@ -134,10 +145,94 @@
         ><img
           class="logo-image"
           src="assets/White-Logo.png"
-          alt="Pennywise Cosmetics Limited" /></a
-      ><span>Beauty Wise · Health Wise · Price Wise.</span
-      ><span>© 2026 Pennywise Cosmetics Ltd</span>
+          alt="Pennywise Cosmetics Limited"
+      /></a>
+      <div class="social-links" aria-label="Social media links">
+        <a
+          href="https://www.tiktok.com/@pennywise.tt"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="TikTok"
+        >
+          <img src="assets/TikTok.png" alt="TikTok" />
+        </a>
+        <a
+          href="https://www.instagram.com/pennywisett/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Instagram"
+        >
+          <img src="assets/Instagram.png" alt="Instagram" />
+        </a>
+        <a
+          href="https://www.facebook.com/PennywiseCosmeticsLtd/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Facebook"
+        >
+          <img src="assets/Facebook.png" alt="Facebook" />
+        </a>
+        <a
+          href="https://whatsapp.com/channel/0029VbCvCr23AzNL0UleLb2i"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="WhatsApp"
+        >
+          <img src="assets/WhatsApp.png" alt="WhatsApp" />
+        </a>
+      </div>
+      <span>© 2026 Pennywise Cosmetics Ltd</span>
     </footer>
+        <button class="scroll-top" aria-label="Back to top" title="Back to top">
+      ↑
+    </button>
+    <aside class="faq-widget" aria-label="Frequently asked questions">
+      <div class="faq-panel" aria-hidden="true">
+        <div class="faq-panel-head">
+          <div class="faq-agent">
+            <img
+              class="faq-avatar"
+              src="assets/Pennywise-Fav-Icon.png"
+              alt="Penny, your Pennywise assistant"
+            />
+            <div class="faq-agent-info">
+              <strong>Pennywise Assistant</strong
+              ><span class="faq-status"><i></i>Online now</span>
+            </div>
+          </div>
+          <button class="faq-close" aria-label="Close FAQ">×</button>
+        </div>
+        <div class="faq-chat" id="faqChat">
+          <div class="msg msg-agent">
+            <img
+              class="msg-avatar"
+              src="assets/Pennywise-Fav-Icon.png"
+              alt=""
+            />
+            <div class="msg-bubble">
+              Hi, I’m your Pennywise Assistant 👋 Ask me anything — like “what
+              time does Chaguanas open?” or “can I refill a prescription?”
+            </div>
+          </div>
+        </div>
+        <form class="faq-input-row" id="faqForm">
+          <input
+            type="text"
+            id="faqInput"
+            name="faqInput"
+            placeholder="Type your question…"
+            autocomplete="off"
+            aria-label="Type your question"
+          />
+          <button type="submit" aria-label="Send question">➤</button>
+        </form>
+      </div>
+      <button class="faq-trigger">
+        <span class="faq-pulse"></span><span>Have a question?</span
+        ><strong>✦</strong>
+      </button>
+    </aside>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
   </body>
 </html>

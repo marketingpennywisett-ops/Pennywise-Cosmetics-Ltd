@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pharmacy | Pennywise Supercentre</title>
+    <meta
+      name="description"
+      content="Browse Pennywise Cosmetics' product categories - cosmetics, personal care, household essentials, pharmacy, baby care, and more, available in-store across Trinidad & Tobago."
+    />
+    <title>Catalog | Pennywise Cosmetics Ltd</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,7 +17,7 @@
     <link rel="icon" type="image/png" href="assets/Pennywise-Fav-Icon.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="inner-page pharmacy-page">
+  <body class="inner-page catalog-page">
     <div class="page-loader" id="pageLoader" aria-hidden="true">
       <div class="page-loader-inner">
         <span class="page-loader-ring"></span>
@@ -28,7 +32,7 @@
       <a class="logo" href="index.html" aria-label="Pennywise home"
         ><img
           class="logo-image"
-          src="assets/Black-Logo.png"
+          src="assets/Pink-Logo.png"
           alt="Pennywise Cosmetics Limited"
       /></a>
       <nav class="main-nav" aria-label="Main navigation">
@@ -36,8 +40,8 @@
         ><a href="about.html">About</a
         ><a href="news-media.html">News/Media</a
         ><a href="social-media.html">Social Media</a
-        ><a href="catalog.html">Catalog</a
-        ><a class="active" href="pharmacy.html">Pharmacy</a
+        ><a class="active" href="catalog.html">Catalog</a
+        ><a href="pharmacy.html">Pharmacy</a
         ><a href="promotions.html">Promotions</a
         ><a href="plazas.html">Plazas</a>
       </nav>
@@ -50,138 +54,68 @@
       </button>
     </header>
     <main>
-      <section class="pharmacy-hero" aria-label="Pharmacy hero">
-        <div class="pharmacy-hero-content reveal">
+      <section class="catalog-hero">
+        <div class="catalog-hero-copy">
           <h1>
-            <span class="hero-line-1"
-              >Trinidad &amp; Tobago's MOST affordable in-store Pharmacy</span
-            ><br /><em>located at any of our locations nationwide</em>
+            Over 16,000 products,<br /><em>one easy stop.</em>
           </h1>
-          <p>CDAP | OTC DRUGS | PRESCRIPTIONS | REFILLS & MORE</p>
-        </div>
-      </section>
-      <section class="services section-pad">
-        <div class="service-grid">
-          <article>
-            <div class="service-photo">
-              <img src="assets/Prescriptions-image.jpg" alt="Prescriptions" />
-            </div>
-            <span>01</span>
-            <h2>Prescriptions</h2>
-            <p>
-              WhatsApp a photo of your prescription to your nearest branch, then
-              bring the physical script in to collect.
-            </p>
-          </article>
-          <article>
-            <div class="service-photo">
-              <img src="assets/wellness-image.jpg" alt="Wellness" />
-            </div>
-            <span>02</span>
-            <h2>Wellness</h2>
-            <p>
-              CDAP, over-the-counter drugs, refills, and thoughtful guidance on
-              everyday health.
-            </p>
-          </article>
-          <article>
-            <div class="service-photo">
-              <img src="assets/private-advice-image.jpg.png" alt="Private advice" />
-            </div>
-            <span>03</span>
-            <h2>Private advice</h2>
-            <p>A calm, confidential space to ask the questions that matter.</p>
-          </article>
+          <p>
+            Browse our range by category. Every Pennywise store carries the
+            full catalog, so you can find what you need at any of our
+            10 locations across Trinidad.
+          </p>
         </div>
       </section>
 
-      <!-- ================= INSURANCE / MEMBERSHIP ACCEPTANCE ================= -->
-      <!--
-        NOTE FOR EDITING: each .accept-media placeholder below is a plain
-        gradient box standing in for a photo ("We Accept [X]" style image
-        with the provider name overlaid). Replace the placeholder <span>
-        with an <img> once real photos are ready.
-      -->
-      <section class="accept-section section-pad">
+      <section class="catalog-categories section-pad">
         <div class="section-heading">
           <div>
-            <h2>We accept the following<br /><em>at all pharmacy locations</em></h2>
+            <h2>Shop by <em>category</em></h2>
           </div>
         </div>
-        <div class="accept-grid">
-          <article class="accept-card">
-            <div class="accept-media accept-media-1">
-              <span class="accept-frame">
-                <span class="accept-eyebrow">We Accept</span>
-                <span class="accept-name">TTARP</span>
-                <span class="accept-sub"
-                  >Trinidad &amp; Tobago Association of Retired Persons</span
-                >
-              </span>
-            </div>
-            <h3>TTARP</h3>
+        <div class="category-grid">
+          <article class="category-card">
+            <img class="category-art" src="assets/Cosmetics-image.jpg" alt="Cosmetics" />
+            <h3>Cosmetics</h3>
+            <p>Makeup, skincare, and beauty essentials from top brands.</p>
           </article>
-          <article class="accept-card">
-            <div class="accept-media accept-media-2">
-              <span class="accept-frame">
-                <span class="accept-eyebrow">We Accept</span>
-                <span class="accept-name">Sagicor</span>
-                <span class="accept-sub">Insurance</span>
-              </span>
-            </div>
-            <h3>Sagicor</h3>
+          <article class="category-card">
+            <img class="category-art" src="assets/Personal-Care-image.jpg" alt="Personal Care" />
+            <h3>Personal Care</h3>
+            <p>Hair care, bath &amp; body, oral care, and grooming.</p>
           </article>
-          <article class="accept-card">
-            <div class="accept-media accept-media-3">
-              <span class="accept-frame">
-                <span class="accept-eyebrow">We Accept</span>
-                <span class="accept-name">Guardian</span>
-                <span class="accept-sub">Health Insurance</span>
-              </span>
-            </div>
-            <h3>Guardian Health</h3>
+          <article class="category-card">
+            <img class="category-art" src="assets/Pharmacy-Wellness-image.jpg" alt="Pharmacy and Wellness" />
+            <h3>Pharmacy &amp; Wellness</h3>
+            <p>OTC medication, CDAP, vitamins, and health essentials.</p>
+          </article>
+          <article class="category-card">
+            <img class="category-art" src="assets/Household-image.jpg" alt="Household" />
+            <h3>Household</h3>
+            <p>Cleaning supplies, paper goods, and everyday home needs.</p>
+          </article>
+          <article class="category-card">
+            <img class="category-art" src="assets/Baby-Kids-image.jpg" alt="Baby and Kids" />
+            <h3>Baby &amp; Kids</h3>
+            <p>Diapers, formula, and gentle care for little ones.</p>
+          </article>
+          <article class="category-card">
+            <img class="category-art" src="assets/Fragrances-image.jpg" alt="Fragrances" />
+            <h3>Fragrances</h3>
+            <p>Perfumes and colognes for every occasion.</p>
           </article>
         </div>
       </section>
 
-      <section class="accept-section accept-section-alt section-pad">
-        <div class="section-heading">
-          <div>
-            <h2>Accepted at <em>all locations</em></h2>
-          </div>
-        </div>
-        <div class="accept-grid accept-grid-2">
-          <article class="accept-card">
-            <div class="accept-media accept-media-4">
-              <span class="accept-frame">
-                <span class="accept-eyebrow">We Accept</span>
-                <span class="accept-name">Baby Grants</span>
-                <span class="accept-sub">In-store</span>
-              </span>
-            </div>
-            <h3>Baby Grants</h3>
-          </article>
-          <article class="accept-card">
-            <div class="accept-media accept-media-5">
-              <span class="accept-frame">
-                <span class="accept-eyebrow">We Accept</span>
-                <span class="accept-name">Bonus Points</span>
-                <span class="accept-sub"
-                  >Republic Bank &amp; First Citizens Certificates</span
-                >
-              </span>
-            </div>
-            <h3>Bonus Points</h3>
-          </article>
-        </div>
-      </section>
-
-      <section class="pharmacy-callout">
-        <h2>Your health,<br /><em>our priority.</em></h2>
+      <section class="catalog-callout">
+        <h2>Can't find <br /><em>what you're looking for?</em></h2>
         <p>
-          Find our in-store pharmacy at any of our 10 locations across Trinidad,
-          from Port of Spain to San Fernando.
+          Visit any of our 10 stores across Trinidad and our team will help
+          you find it, or check our current promotions for the best deals.
         </p>
+        <a class="text-link light-text" href="promotions.html"
+          >See current promotions <span>↗</span></a
+        >
       </section>
     </main>
     <footer>
