@@ -48,19 +48,6 @@ const faqInput = document.getElementById("faqInput");
 const scrollTopBtn = document.querySelector(".scroll-top");
 const AGENT_AVATAR = "assets/Pennywise-Fav-Icon.png";
 
-const mobileDemoOverlay = document.createElement("div");
-mobileDemoOverlay.id = "mobile-demo-overlay";
-mobileDemoOverlay.setAttribute("aria-live", "polite");
-mobileDemoOverlay.textContent = "Not yet Mobile Ready";
-document.body.appendChild(mobileDemoOverlay);
-
-function applyMobileDemoLock() {
-  const isMobile = window.matchMedia("(max-width: 1023px)").matches;
-  document.body.classList.toggle("mobile-demo-lock", isMobile);
-}
-
-applyMobileDemoLock();
-window.addEventListener("resize", applyMobileDemoLock);
 
 /* ============================================================
    COUNTING ANIMATION
